@@ -1,18 +1,18 @@
 package jliu2882;
 
 public class JackOLantern {
-    public String[][] array;
+    private String[][] faceFeatures;
 
     public JackOLantern(String[][] faceFeatures){
-        this.array = faceFeatures;
+        this.faceFeatures = faceFeatures;
     }
 
     public void edit(String replace, int row, int column){
-        array[row][column] = replace;
+        faceFeatures[row][column] = replace;
     }
 
     public void fill(String str){
-        for(String[] row : array){
+        for(String[] row : faceFeatures){
             for(String column : row){
                 column =  str;
             }
@@ -20,11 +20,13 @@ public class JackOLantern {
     }
 
     public String toString(){
-        for(String[] row : array){
+        String result = "";
+        for(String[] row : faceFeatures){
             for(String column : row){
-                System.out.print(column);
+                result+=column;
             }
-            System.out.print("\n");
+           result+="\n";
         }
+        return result;
     }
 }
